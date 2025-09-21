@@ -99,7 +99,7 @@ function Hero({ t }) {
           src="/assets/logo.png"
           alt="On Duty Logo"
           className="mx-auto mt-12 sm:mt-20 lg:mt-40 mb-6 
-                     w-40 h-40 sm:w-56 sm:h-56 lg:w-[500px] lg:h-[500px] 
+                     w-48 h-48 sm:w-64 sm:h-64 lg:w-[500px] lg:h-[500px] 
                      object-contain drop-shadow-lg"
         />
 
@@ -118,18 +118,39 @@ function Hero({ t }) {
   );
 }
 
-// 🔹 Sobre Nós
+// 🔹 Sobre Nós (com vídeos + fotos)
 function SobreNos({ t }) {
   return (
     <Section id="sobre-nos" title={t.sobreNosTitle} subtitle={t.sobreNosSubtitle}>
       <p className="text-slate-700 mb-8 text-center max-w-3xl mx-auto">
         {t.sobreNosTexto}
       </p>
+
+      {/* Grid de mídia */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Vídeos */}
+        <video controls className="rounded-xl w-full h-64 object-cover">
+          <source src="/assets/video1.mp4" type="video/mp4" />
+        </video>
+        <video controls className="rounded-xl w-full h-64 object-cover">
+          <source src="/assets/video2.mp4" type="video/mp4" />
+        </video>
+
+        {/* Fotos */}
+        <img src="/assets/foto1.jpg" alt="Foto 1" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto2.jpg" alt="Foto 2" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto3.jpg" alt="Foto 3" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto4.jpg" alt="Foto 4" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto5.jpg" alt="Foto 5" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto6.jpg" alt="Foto 6" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto7.jpg" alt="Foto 7" className="rounded-xl w-full h-64 object-cover" />
+        <img src="/assets/foto8.jpg" alt="Foto 8" className="rounded-xl w-full h-64 object-cover" />
+      </div>
     </Section>
   );
 }
 
-// 🔹 Serviços em cartões
+// 🔹 Serviços
 function Servicos({ t }) {
   const servicos = [
     { icon: <Ship className="w-10 h-10 text-sky-600" />, text: t.servicosLista[0] },
