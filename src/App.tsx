@@ -1,6 +1,6 @@
 /* @ts-nocheck */
 import React, { useState, useEffect } from "react";
-import { Ship, Fish, Sun, Island } from "lucide-react";
+import { Ship, Fish, Sun, MapPin } from "lucide-react";
 
 // 🔹 Textos em PT e EN
 const texts = {
@@ -95,7 +95,6 @@ function Hero({ t }) {
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Logo */}
         <img
           src="/assets/logo.png"
           alt="On Duty Logo"
@@ -104,7 +103,6 @@ function Hero({ t }) {
                      object-contain drop-shadow-lg"
         />
 
-        {/* Texto e botão */}
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
           {t.heroTitle}
         </h1>
@@ -137,7 +135,7 @@ function Servicos({ t }) {
     { icon: <Ship className="w-10 h-10 text-sky-600" />, text: t.servicosLista[0] },
     { icon: <Fish className="w-10 h-10 text-sky-600" />, text: t.servicosLista[1] },
     { icon: <Sun className="w-10 h-10 text-sky-600" />, text: t.servicosLista[2] },
-    { icon: <Island className="w-10 h-10 text-sky-600" />, text: t.servicosLista[3] },
+    { icon: <MapPin className="w-10 h-10 text-sky-600" />, text: t.servicosLista[3] },
   ];
 
   return (
