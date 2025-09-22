@@ -20,14 +20,18 @@ const texts = {
 Desde passeios de barco até pesca. Venha viver as melhores experiências connosco.`,
 
     capitaoTitulo: "O Capitão",
-    capitaoTexto: `O capitão Carlos Cavaco, nascido em Faro, aficionado pela pesca desportiva e amante da nossa Ria Formosa e Costa Algarvia, leva já mais de 25 anos de experiência no mar.
-Um dos impulsionadores da pesca de Big Game em Portugal, com destaque para a captura do primeiro atum com mais de 200kg homologado pela EFSA.
-Sempre preocupado com o bem-estar do ecossistema, coloca a qualidade e o cliente em primeiro lugar.`,
+    capitaoTexto1: `O capitão Carlos Cavaco, nascido em Faro, é aficionado pela pesca desportiva e apaixonado pela Ria Formosa e Costa Algarvia. Conta com mais de 25 anos de experiência no mar e em atividades náuticas.`,
+    capitaoTexto2: `Foi um dos grandes impulsionadores da Pesca de Big Game em Portugal, destacando-se na captura de Marlins, pequenos atuns e dourados.`,
+    capitaoTexto3: `Entre as suas conquistas está o primeiro atum com mais de 200kg, homologado pela EFSA. Sempre atento ao bem-estar do ecossistema, coloca a qualidade e o cliente em primeiro lugar.`,
 
     embarcacaoTitulo: "A Embarcação",
-    embarcacaoTexto: `A embarcação Rodman de 10.50m oferece todas as comodidades e conforto.
-Dispõe de 2 quartos, WC, cozinha equipada com grelhador elétrico, placa vitrocerâmica, máquina de café expresso e água potável a bordo.
-O objetivo é garantir um dia inesquecível com o máximo de qualidade e conforto. Sejam bem-vindos!`,
+    embarcacaoIntro: `A embarcação é uma Rodman 10.50m, equipada para proporcionar não só pesca, mas também conforto e lazer.`,
+    embarcacaoItem1: "2 quartos confortáveis",
+    embarcacaoItem2: "WC equipado",
+    embarcacaoItem3: "Cozinha com grelhador elétrico e placa vitrocerâmica",
+    embarcacaoItem4: "Máquina de café expresso",
+    embarcacaoItem5: "Água potável a bordo",
+    embarcacaoFim: `Tudo pensado para que viva um dia inesquecível, com qualidade e serviço premium. Sejam Bem-Vindos!`,
 
     servicosTitle: "Serviços Prestados",
     servicoPasseiosTitulo: "Passeios na Ria Formosa e Costa Algarvia",
@@ -66,14 +70,18 @@ O objetivo é garantir um dia inesquecível com o máximo de qualidade e confort
 From boat trips to fishing. Come and enjoy the best experiences with us.`,
 
     capitaoTitulo: "The Captain",
-    capitaoTexto: `Captain Carlos Cavaco, born in Faro, passionate about sport fishing and a lover of Ria Formosa and the Algarve Coast, has over 25 years of experience at sea.
-One of the pioneers of Big Game fishing in Portugal, with the first tuna over 200kg certified by EFSA.
-Always concerned with the well-being of the ecosystem, he prioritizes quality and the customer above all.`,
+    capitaoTexto1: `Captain Carlos Cavaco, born in Faro, is passionate about sport fishing and a true lover of Ria Formosa and the Algarve Coast. He has over 25 years of experience at sea and in nautical activities.`,
+    capitaoTexto2: `He was one of the pioneers of Big Game Fishing in Portugal, excelling in the catch of Marlins, small tuna, and dorados.`,
+    capitaoTexto3: `Among his achievements is the first tuna over 200kg, certified by EFSA. Always attentive to the well-being of the ecosystem, he places quality and the client first.`,
 
     embarcacaoTitulo: "The Boat",
-    embarcacaoTexto: `The 10.50m Rodman boat offers full comfort and convenience.
-It has 2 bedrooms, bathroom, kitchen with electric grill, vitroceramic hob, espresso coffee machine, and fresh water on board.
-Everything is designed to guarantee an unforgettable day with top quality and comfort. Welcome aboard!`,
+    embarcacaoIntro: `The boat is a Rodman 10.50m, equipped not only for fishing but also for comfort and leisure.`,
+    embarcacaoItem1: "2 comfortable cabins",
+    embarcacaoItem2: "Equipped bathroom",
+    embarcacaoItem3: "Kitchen with electric grill and vitroceramic hob",
+    embarcacaoItem4: "Espresso coffee machine",
+    embarcacaoItem5: "Drinking water on board",
+    embarcacaoFim: `Everything is designed for you to enjoy an unforgettable day, with premium quality and service. Welcome aboard!`,
 
     servicosTitle: "Our Services",
     servicoPasseiosTitulo: "Tours in Ria Formosa and Algarve Coast",
@@ -142,13 +150,23 @@ function SobreNos({ t }) {
       {/* Capitão */}
       <div className="mb-8">
         <h3 className="text-2xl font-bold mb-3">👨‍✈️ {t.capitaoTitulo}</h3>
-        <p className="text-slate-700 leading-relaxed whitespace-pre-line">{t.capitaoTexto}</p>
+        <p className="text-slate-700 leading-relaxed mb-3">{t.capitaoTexto1}</p>
+        <p className="text-slate-700 leading-relaxed mb-3">{t.capitaoTexto2}</p>
+        <p className="text-slate-700 leading-relaxed">{t.capitaoTexto3}</p>
       </div>
 
       {/* Embarcação */}
-      <div>
+      <div className="mb-12">
         <h3 className="text-2xl font-bold mb-3">🛥️ {t.embarcacaoTitulo}</h3>
-        <p className="text-slate-700 leading-relaxed whitespace-pre-line">{t.embarcacaoTexto}</p>
+        <p className="text-slate-700 leading-relaxed mb-3">{t.embarcacaoIntro}</p>
+        <ul className="list-disc list-inside text-slate-700 space-y-2 mb-3">
+          <li>{t.embarcacaoItem1}</li>
+          <li>{t.embarcacaoItem2}</li>
+          <li>{t.embarcacaoItem3}</li>
+          <li>{t.embarcacaoItem4}</li>
+          <li>{t.embarcacaoItem5}</li>
+        </ul>
+        <p className="text-slate-700 leading-relaxed font-medium">{t.embarcacaoFim}</p>
       </div>
     </Section>
   );
