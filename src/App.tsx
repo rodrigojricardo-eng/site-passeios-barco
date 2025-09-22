@@ -18,6 +18,17 @@ const texts = {
     sobreNosSubtitle: "Conheça a nossa empresa",
     sobreNosTexto: `A On Duty dedica-se a proporcionar experiências únicas no mar. 
 Desde passeios de barco até pesca. Venha viver as melhores experiências connosco.`,
+    capitaoTitulo: "O Capitão",
+    capitaoTexto: `O capitão Carlos Cavaco, nascido em Faro, aficionado pela pesca desportiva e amante da nossa Ria Formosa e Costa Algarvia, leva já uma experiência de mar e atividades náuticas desde há 25 anos.
+Um dos impulsionadores da Pesca de Big Game na pesca de Marlins, pequenos atuns, dourados e com o primeiro atum com mais de 200kg capturado a pesca de Big Game, homologado pela EFSA em Portugal.
+Amante da natureza marítima e preocupado sempre com o bem estar do ecossistema.
+À sua atividade aqui descrita junta-se a qualidade, preocupação e o bem estar, colocando sempre o cliente em primeiro lugar.`,
+
+    embarcacaoTitulo: "A Embarcação",
+    embarcacaoTexto: `A embarcação que vos oferece trata-se de uma embarcação da marca Rodman com 10.50 mt com todas as comodidades e conforto para quem não quer fazer somente pesca.
+2 quartos, wc, cozinha com grelhador elétrico e placa vitroceramica, máquina de café expresso e água potável a bordo.
+Tudo para que possam passar um dia inesquecível e memorável com a melhor qualidade e serviço pois trata-se da vossa casa no dia que se juntarem comigo.
+SEJAM BEM VINDOS`,
 
     servicosTitle: "Serviços Prestados",
     servicosLista: [
@@ -52,6 +63,16 @@ Desde passeios de barco até pesca. Venha viver as melhores experiências connos
     sobreNosSubtitle: "Get to know our company",
     sobreNosTexto: `On Duty is dedicated to providing unique experiences at sea. 
 From boat trips to fishing. Come and enjoy the best experiences with us.`,
+    capitaoTitulo: "The Captain",
+    capitaoTexto: `Captain Carlos Cavaco, born in Faro, passionate about sport fishing and a lover of our Ria Formosa and Algarve Coast, has over 25 years of experience at sea and in nautical activities.
+One of the pioneers of Big Game Fishing in Portugal, with the first tuna over 200kg officially registered by EFSA.
+A true ocean lover, always concerned with the well-being of the ecosystem, ensuring safety, quality and customer satisfaction on every trip.`,
+
+    embarcacaoTitulo: "The Boat",
+    embarcacaoTexto: `Our boat is a Rodman 10.50m, with all the amenities and comfort for those who want more than just fishing.
+2 bedrooms, bathroom, kitchen with electric grill and vitroceramic hob, espresso machine and fresh water on board.
+Everything so you can spend an unforgettable day with the best quality and service — this is your home at sea when you join us.
+WELCOME ABOARD!`,
 
     servicosTitle: "Our Services",
     servicosLista: [
@@ -85,7 +106,7 @@ function Section({ id, title, subtitle, children }) {
   );
 }
 
-// 🔹 Hero responsivo
+// 🔹 Hero
 function Hero({ t }) {
   return (
     <section
@@ -93,7 +114,6 @@ function Hero({ t }) {
       style={{ backgroundImage: "url('/assets/fundo.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/50"></div>
-
       <div className="relative z-10 flex flex-col items-center">
         <img
           src="/assets/logo.png"
@@ -102,15 +122,9 @@ function Hero({ t }) {
                      w-48 h-48 sm:w-64 sm:h-64 lg:w-[500px] lg:h-[500px] 
                      object-contain drop-shadow-lg"
         />
-
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
-          {t.heroTitle}
-        </h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">{t.heroTitle}</h1>
         <p className="mb-6 text-base sm:text-lg lg:text-xl">{t.heroSubtitle}</p>
-        <a
-          href="#contactos"
-          className="bg-white text-sky-600 font-bold px-6 py-3 rounded hover:bg-gray-100"
-        >
+        <a href="#contactos" className="bg-white text-sky-600 font-bold px-6 py-3 rounded hover:bg-gray-100">
           {t.reservar}
         </a>
       </div>
@@ -118,13 +132,24 @@ function Hero({ t }) {
   );
 }
 
-// 🔹 Sobre Nós (com vídeos + fotos)
+// 🔹 Sobre Nós
 function SobreNos({ t }) {
   return (
     <Section id="sobre-nos" title={t.sobreNosTitle} subtitle={t.sobreNosSubtitle}>
-      <p className="text-slate-700 mb-8 text-center max-w-3xl mx-auto">
-        {t.sobreNosTexto}
-      </p>
+      {/* Texto inicial */}
+      <p className="text-slate-700 mb-8 text-center max-w-3xl mx-auto">{t.sobreNosTexto}</p>
+
+      {/* Capitão */}
+      <div className="mb-8">
+        <h3 className="text-2xl font-bold mb-2">{t.capitaoTitulo}</h3>
+        <p className="text-slate-700 leading-relaxed">{t.capitaoTexto}</p>
+      </div>
+
+      {/* Embarcação */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold mb-2">{t.embarcacaoTitulo}</h3>
+        <p className="text-slate-700 leading-relaxed">{t.embarcacaoTexto}</p>
+      </div>
 
       {/* Grid de mídia */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -152,26 +177,15 @@ function SobreNos({ t }) {
 
 // 🔹 Serviços
 function Servicos({ t }) {
-  const servicos = [
-    { icon: <Ship className="w-10 h-10 text-sky-600" />, text: t.servicosLista[0] },
-    { icon: <Fish className="w-10 h-10 text-sky-600" />, text: t.servicosLista[1] },
-    { icon: <Sun className="w-10 h-10 text-sky-600" />, text: t.servicosLista[2] },
-    { icon: <MapPin className="w-10 h-10 text-sky-600" />, text: t.servicosLista[3] },
-  ];
-
   return (
     <Section id="servicos" title={t.servicosTitle}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {servicos.map((item, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-sky-50 hover:shadow-lg transition"
-          >
-            {item.icon}
-            <p className="mt-4 text-slate-700 text-lg font-medium">{item.text}</p>
-          </div>
+      <ul className="space-y-4 text-lg text-slate-700 text-center">
+        {t.servicosLista.map((s, i) => (
+          <li key={i} className="flex items-center justify-center gap-2">
+            <Ship className="w-5 h-5 text-sky-600" /> {s}
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }
@@ -180,7 +194,7 @@ function Servicos({ t }) {
 function Precos({ t }) {
   return (
     <Section id="precos" title={t.precosTitle}>
-      <p className="text-slate-700 text-center text-lg">{t.precosTexto}</p>
+      <p className="text-slate-700 text-center">{t.precosTexto}</p>
     </Section>
   );
 }
@@ -204,11 +218,7 @@ function Contactos({ t }) {
         </p>
         <p>
           <strong>{t.instagram}:</strong>{" "}
-          <a
-            href="https://instagram.com/on_duty_sea_lovers"
-            target="_blank"
-            className="text-sky-600 hover:underline"
-          >
+          <a href="https://instagram.com/on_duty_sea_lovers" target="_blank" className="text-sky-600 hover:underline">
             @on_duty_sea_lovers
           </a>
         </p>
@@ -220,6 +230,7 @@ function Contactos({ t }) {
 // 🔹 App principal
 export default function SitePasseiosBarco() {
   const [lang, setLang] = useState("pt");
+
   useEffect(() => {
     const browserLang = navigator.language || navigator.userLanguage;
     if (browserLang.toLowerCase().startsWith("en")) setLang("en");
@@ -229,16 +240,17 @@ export default function SitePasseiosBarco() {
 
   const handleNavClick = (e, id) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      {/* Botão idioma */}
+      {/* Botão de idioma */}
       <div className="absolute top-4 right-4 z-50">
         <button
           onClick={() => setLang(lang === "pt" ? "en" : "pt")}
-          className="bg-white border px-2 py-1 rounded shadow hover:bg-gray-100"
+          className="bg-white border px-2 py-1 rounded shadow hover:bg-gray-100 flex items-center gap-2"
         >
           {lang === "pt" ? "🇬🇧 EN" : "🇵🇹 PT"}
         </button>
@@ -247,7 +259,7 @@ export default function SitePasseiosBarco() {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 font-extrabold text-xl">
+          <a href="#" className="flex items-center gap-2 font-extrabold text-xl tracking-tight">
             <Ship className="w-6 h-6" /> ON DUTY
           </a>
           <nav className="hidden sm:flex items-center gap-6 text-sm">
@@ -267,19 +279,11 @@ export default function SitePasseiosBarco() {
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Secções */}
       <Hero t={t} />
-
-      {/* Sobre Nós */}
       <SobreNos t={t} />
-
-      {/* Serviços */}
       <Servicos t={t} />
-
-      {/* Preços */}
       <Precos t={t} />
-
-      {/* Contactos */}
       <Contactos t={t} />
 
       {/* Footer */}
