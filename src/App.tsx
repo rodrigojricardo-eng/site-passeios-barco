@@ -178,17 +178,29 @@ function SobreNos({ t }) {
 // 🔹 Serviços
 function Servicos({ t }) {
   return (
-    <Section id="servicos" title={t.servicosTitle}>
-      <ul className="space-y-4 text-lg text-slate-700 text-center">
-        {t.servicosLista.map((s, i) => (
-          <li key={i} className="flex items-center justify-center gap-2">
-            <Ship className="w-5 h-5 text-sky-600" /> {s}
-          </li>
-        ))}
-      </ul>
+    <Section id="servicos" title="Serviços Prestados">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div className="bg-sky-100 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 className="text-xl font-semibold mb-2">Passeios na Ria Formosa e Costa Algarvia</h3>
+          <p className="text-slate-700">Explore a beleza natural e paisagens únicas.</p>
+        </div>
+
+        <div className="bg-sky-100 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 className="text-xl font-semibold mb-2">Pesca Desportiva de Recife e Big Game</h3>
+          <p className="text-slate-700">Atuns gigantes, Marlins e muito mais.</p>
+        </div>
+
+        <div className="bg-sky-100 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 className="text-xl font-semibold mb-2">Sunset com Passeio, Vinho e Degustação</h3>
+          <p className="text-slate-700">Momentos relaxantes com paragem nas ilhas.</p>
+        </div>
+
+      </div>
     </Section>
   );
 }
+
 
 // 🔹 Preços
 function Precos({ t }) {
