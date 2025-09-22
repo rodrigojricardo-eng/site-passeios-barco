@@ -145,7 +145,9 @@ function Hero({ t }) {
 function SobreNos({ t }) {
   return (
     <Section id="sobre-nos" title={t.sobreNosTitle} subtitle={t.sobreNosSubtitle}>
-      <p className="text-slate-700 mb-8 text-center max-w-3xl mx-auto">{t.sobreNosTexto}</p>
+      <p className="text-slate-700 mb-8 text-center max-w-3xl mx-auto">
+        {t.sobreNosTexto}
+      </p>
 
       {/* Capitão */}
       <div className="mb-8">
@@ -166,7 +168,31 @@ function SobreNos({ t }) {
           <li>{t.embarcacaoItem4}</li>
           <li>{t.embarcacaoItem5}</li>
         </ul>
-        <p className="text-slate-700 leading-relaxed font-medium">{t.embarcacaoFim}</p>
+        <p className="text-slate-700 leading-relaxed font-medium">
+          {t.embarcacaoFim}
+        </p>
+      </div>
+
+      {/* Galeria de fotos e vídeos */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <img src="/assets/foto1.jpg" alt="Passeio 1" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto2.jpg" alt="Passeio 2" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto3.jpg" alt="Passeio 3" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto4.jpg" alt="Passeio 4" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto5.jpg" alt="Passeio 5" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto6.jpg" alt="Passeio 6" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto7.jpg" alt="Passeio 7" className="rounded-lg shadow-md object-cover w-full h-64" />
+        <img src="/assets/foto8.jpg" alt="Passeio 8" className="rounded-lg shadow-md object-cover w-full h-64" />
+
+        {/* Vídeos */}
+        <video controls className="rounded-lg shadow-md w-full h-64 object-cover">
+          <source src="/assets/video1.mp4" type="video/mp4" />
+          O seu navegador não suporta vídeos.
+        </video>
+        <video controls className="rounded-lg shadow-md w-full h-64 object-cover">
+          <source src="/assets/video2.mp4" type="video/mp4" />
+          O seu navegador não suporta vídeos.
+        </video>
       </div>
     </Section>
   );
