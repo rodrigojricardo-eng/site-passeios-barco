@@ -206,12 +206,6 @@ function Precos({ t }) {
     <Section id="precos" title={t.precosTitle}>
       <div className="bg-sky-50 border border-sky-200 rounded-xl shadow p-8 text-center max-w-2xl mx-auto">
         <p className="text-slate-700 text-lg mb-4">{t.precosTexto}</p>
-        <a
-          href="#contactos"
-          className="inline-block bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-700 transition"
-        >
-          {t.navContactos}
-        </a>
       </div>
     </Section>
   );
